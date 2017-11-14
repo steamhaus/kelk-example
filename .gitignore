@@ -1,0 +1,5 @@
+.terraform*
+terraform.tfstate*
+lambdas/*/*.zip
+lambdas/*/packaged/*
+crash.log
