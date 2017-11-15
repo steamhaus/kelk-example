@@ -52,11 +52,11 @@ FIELDNAMES = (
     'x-host-header',
     'cs-protocol',
     'cs-bytes',
-    'time-taken'
+    'time-taken',
     'x-forwarded-for',
     'ssl-protocol',
     'ssl-cipher',
-    'x-edge-response-result-type'
+    'x-edge-response-result-type',
     'cs-protocol-version'
 )
 
@@ -65,7 +65,6 @@ def parse_log(filename):
     recordset = []
 
     log = gzip.open(filename, mode='rt')
-    csv.register_dialect('space', delimiter=' ', quoting=csv.QUOTE_MINIMAL)
     parsed_log = csv.DictReader(
         log, fieldnames=FIELDNAMES, dialect="excel-tab"
     )
